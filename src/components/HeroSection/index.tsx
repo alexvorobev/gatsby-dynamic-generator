@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../Container";
 
 type Props = {
-    title: string;
+    title?: string;
     image?: string;
 }
 

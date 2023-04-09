@@ -53,7 +53,7 @@ const ContactForm:React.FC<Props> = ({
                         <label htmlFor="email">email</label>
                         <input type="email" {...register('email')} />
                         <label htmlFor="message">message</label>
-                        <input type="text" {...register('email')} />
+                        <input type="text" {...register('message')} />
                         <input type="submit" />
                     </form>
                 </div>

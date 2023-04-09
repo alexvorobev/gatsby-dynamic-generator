@@ -31,8 +31,6 @@ const sectionImageStyle = {
     objectFit: 'cover',
 } as React.CSSProperties;
 
-const 
-
 const LeftSideImage:React.FC<Props> = ({
     title,
     description,
@@ -42,7 +40,6 @@ const LeftSideImage:React.FC<Props> = ({
         <div style={sectionStyle}>
             <Container>
                 <div style={sectionContentStyle}>
-                    <img src={image} alt="" style={sectionImageStyle} />
                     <img src={image} alt="" style={sectionImageStyle} />
                     <div>
                         <h2 style={sectionTitleStyle}>{title}</h2>
