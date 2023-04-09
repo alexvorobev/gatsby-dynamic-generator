@@ -1,6 +1,9 @@
 import * as React from "react"
 import { HeadFC, Link, PageProps } from "gatsby"
-import { useForm, SubmitHandler } from "react-hook-form";
+import HeroSection from "../components/HeroSection";
+import data from "../../data";
+import RightSideImage from "../components/RightSideImage";
+import ContactForm from "../components/ContactForm";
 
 type Inputs = {
   example: string,
@@ -9,28 +12,26 @@ type Inputs = {
 
 const pageStyles = {
   color: "#232129",
-  padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
 const IndexPage: React.FC<PageProps> = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
   return (
     <main style={pageStyles}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* register your input into the hook by invoking the "register" function */}
-        <input defaultValue="test" {...register("example")} />
-        
-        {/* include validation with required or other standard HTML validation rules */}
-        <input {...register("exampleRequired", { required: true })} />
-        {/* errors will return when field validation fails  */}
-        {errors.exampleRequired && <span>This field is required</span>}
-        
-        <input type="submit" />
-      </form>
-      <Link to='/about'>go to about</Link>
+      <HeroSection
+        title={data[0].title}
+        image={data[0]?.images?.[0].url}
+      />
+      <RightSideImage
+        title={data[1].title}
+        description={data[1].description}
+        image={data[1]?.images?.[0].url}
+      />
+      <ContactForm
+        title={data[3].title}
+        description={data[3].description}
+      />
     </main>
   )
 }
